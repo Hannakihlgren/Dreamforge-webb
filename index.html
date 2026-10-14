@@ -4,7 +4,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device=widht, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Dreamforge</title>
   </head>
@@ -46,14 +46,24 @@
    </div>
      </div>
        </section>
-   
+
    <section class="working-process">
-   <h2>Så arbetar vi tillsammans</h2>
-   <p>
-      Vi börjar med att förstå behovet, tar fram förslag och utvecklar dem tillsammans.
-   </p>
-    </section>
-         </main>
+     <h2>Så arbetar vi tillsammans</h2>
+     <p>
+      Vi börjar tillsammans med att förstå behovet, tar fram förslag och utvecklar dem tillsammans.
+     </p>
+
+   <button type="button" id="toggle-details"
+           aria-expanded="false" aria-controls="process-details">
+       Visa mer om arbetssättet 
+   </button>
+ 
+   <p id="process-details" hidden>
+      Vi testar förslagen i liten skala, samlar in återkoppling och förbättrar dem steg för steg.
+    </p>
+   </section>
+      
+ </main>
 
    <footer class="site-footer">
      <p>DREAMFORGE</p>
@@ -61,6 +71,22 @@
      Hör av dig
      </a>
    </footer>
+
+   <script>
+     const button = document.getElementById("toggle-details");
+     const details = document.getElementById("process-details");
+
+   button.addEventListener("click", function () {
+     details.hidden = !details.hidden;
+     button.setAttribute("aria-expanded", String(!details.hidden));
+
+   if (details.hidden) {
+     button.textContent= "Visa mer om arbetssättet";
+   } else {
+     button.textContent = "Visa mindre om arbetssättet";
+   }
+  });
+   </script>
 
   </body>
 </html>
